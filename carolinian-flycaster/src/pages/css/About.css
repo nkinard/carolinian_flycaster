@@ -27,6 +27,10 @@
   padding-left: 20px;
 }
 
+.aboutme {
+  padding: 20px;
+}
+
 @media screen and (min-width: 768px) {
   .f-container {
     display: flex;

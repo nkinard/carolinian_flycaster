@@ -1,9 +1,3 @@
-#main-content {
-  width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .page-paragraph-content {
   padding-top: 10px;
   padding-bottom: 10px;
@@ -52,10 +46,6 @@
 
 /* Larger Resolutions */
 @media (min-width: 768px) {
-  .f-container {
-    display: flex;
-  }
-
   .page-paragraph-box {
     flex: 60%;
   }

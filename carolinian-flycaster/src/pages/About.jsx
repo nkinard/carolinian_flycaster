@@ -1,8 +1,10 @@
 import './css/About.css';
+import ContactBox from '../components/ContactBox';
 
 function About() {
     return (
       <>
+      <main id="main-content">
         <div className="page-paragraph-content">
           <section className="f-container">
             <div className="aboutme-img">
@@ -37,31 +39,32 @@ function About() {
         <div id="contact-icons" className="page-paragraph-box">
           <section className="f-container">
             <div className="contact-box1">
-              <section className="f-container">
-                <img src="images/emailpin.png" alt="mail" />
-                <h3>Email:</h3>
-                <p>nk@nkinard.com</p>
-              </section>
-              <section className="f-container">
-                <img src="images/phonepin.png" alt="phone" />
-                <h3>Phone:</h3>
-                <p>(864) - 555 - 5989</p>
-              </section>
+              <ContactBox
+                image="images/emailpin.png"
+                title="Email:"
+                input="nk@nkinard.com"
+              />
+              <ContactBox
+                image="images/phonepin.png"
+                title="Phone:"
+                input="(864) - 555 - 5989"
+              />
             </div>
             <div className="contact-box2">
-              <section className="f-container">
-                <img src="images/linkedinpin.png" alt="linkedin" />
-                <h3>LinkedIn:</h3>
-                <p>www.linkedin.com/in/nicholaskinard/</p>
-              </section>
-              <section className="f-container">
-                <img src="images/instapin.png" alt="instagram" />
-                <h3>Instagram:</h3>
-                <p>www.instagram.com/nick75sc/</p>
-              </section>
+              <ContactBox
+                image="images/linkedinpin.png"
+                title="LinkedIn:"
+                input="www.linkedin.com/in/nicholaskinard/"
+              />
+              <ContactBox
+                image="images/instapin.png"
+                title="Instagram:"
+                input="www.instagram.com/nick75sc/"
+              />
             </div>
           </section>
         </div>
+        </main>
       </>
     );
 };
