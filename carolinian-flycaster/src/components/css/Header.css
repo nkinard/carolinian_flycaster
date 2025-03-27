@@ -1,5 +1,12 @@
 header {
-    background: lightpink;
-    text-align: center;
-    padding: 10px;
+    color: var(--primary-font-color);
+}
+
+.header-logo {
+    display: flex;
+}
+
+.header-logo h1 {
+    padding-left: 10px;
+    padding-top: 20px;
 }
