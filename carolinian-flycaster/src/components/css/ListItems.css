@@ -1,0 +1,14 @@
+li {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.ListItems {
+    display: flex;
+}
+
+.ListItems img {
+    padding-right: 20px;
+    max-height:32px;
+    max-width: 32px;
+}

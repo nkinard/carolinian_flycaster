@@ -4,8 +4,8 @@ import Navigation from "./Navigation";
 function Header() {
     return(
         <header>
-            <section class="header-logo">
-                <img src="images/live-oak.jpg" alt="logo"/>
+            <section className="header-logo">
+                <img src={process.env.PUBLIC_URL + "/images/logo.png"} alt="logo"/>
                 <h1>The Carolinian Flycaster</h1>
             </section>
             <Navigation />

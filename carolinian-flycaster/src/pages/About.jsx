@@ -3,12 +3,12 @@ import './css/About.css';
 function About() {
     return (
       <>
-        <div class="page-paragraph-content">
-          <section class="f-container">
-            <div class="aboutme-img">
-              <img src="images/headshot.jpg" alt="image of me" />
+        <div className="page-paragraph-content">
+          <section className="f-container">
+            <div className="aboutme-img">
+              <img src="images/headshot.jpg" alt="creator portrait" />
             </div>
-            <div class="page-paragraph-box aboutme">
+            <div className="page-paragraph-box aboutme">
               <h2>About Me</h2>
               <p>
                 Hello, my name is Nicholas Kinard! I am the creator and
@@ -34,28 +34,28 @@ function About() {
 
         <h2>Contact Me</h2>
 
-        <div id="contact-icons" class="page-paragraph-box">
-          <section class="f-container">
-            <div class="contact-box1">
-              <section class="f-container">
-                <img src="images/emailpin.png" alt="icon of mail" />
+        <div id="contact-icons" className="page-paragraph-box">
+          <section className="f-container">
+            <div className="contact-box1">
+              <section className="f-container">
+                <img src="images/emailpin.png" alt="mail" />
                 <h3>Email:</h3>
                 <p>nk@nkinard.com</p>
               </section>
-              <section class="f-container">
-                <img src="images/phonepin.png" alt="icon of phone" />
+              <section className="f-container">
+                <img src="images/phonepin.png" alt="phone" />
                 <h3>Phone:</h3>
                 <p>(864) - 555 - 5989</p>
               </section>
             </div>
-            <div class="contact-box2">
-              <section class="f-container">
-                <img src="images/linkedinpin.png" alt="icon of linkedin" />
+            <div className="contact-box2">
+              <section className="f-container">
+                <img src="images/linkedinpin.png" alt="linkedin" />
                 <h3>LinkedIn:</h3>
                 <p>www.linkedin.com/in/nicholaskinard/</p>
               </section>
-              <section class="f-container">
-                <img src="images/instapin.png" alt="icon of instagram" />
+              <section className="f-container">
+                <img src="images/instapin.png" alt="instagram" />
                 <h3>Instagram:</h3>
                 <p>www.instagram.com/nick75sc/</p>
               </section>
