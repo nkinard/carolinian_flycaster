@@ -15,21 +15,6 @@
   font-size: 18px;
 }
 
-.page-list-box {
-  border: 2px solid var(--borders-color);
-  margin-top: 20px;
-  border-radius: 25px;
-}
-
-.page-list-box h3 {
-  padding-left: 25px;
-  color: var(--primary-font-color);
-}
-
-.page-list-box ul {
-  padding-left: 25px;
-}
-
 /* Main page Specific */
 
 .image-slider {
@@ -49,11 +34,7 @@
   .page-paragraph-box {
     flex: 60%;
   }
-
-  .page-list-box {
-    flex: 40%;
-  }
-
+  
   .four-img-stack {
     display: flex;
     justify-content: space-between;

@@ -1,0 +1,28 @@
+.page-paragraph-content {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.page-paragraph-content h2 {
+  color: var(--primary-font-color);
+}
+
+.page-paragraph-content p {
+  font-size: 18px;
+}
+
+.page-buttons h2 {
+  text-align: center;
+}
+
+.hide {
+    display: none;
+}
+
+.x-button {
+    position: relative;
+    font-size: x-large;
+    cursor: pointer;
+    display:flex;
+    justify-content: end;
+}

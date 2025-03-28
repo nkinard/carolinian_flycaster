@@ -1,6 +1,6 @@
 import './css/Home.css';
 import PageButton from '../components/PageButton';
-import ListItems from '../components/ListItems';
+import ListItemsIcon from '../components/ListItemsIcon';
 
 function App() {
   return (
@@ -25,46 +25,27 @@ function App() {
               fish and fly library and fishing guide to get started today!
             </p>
           </div>
-          <div className="page-list-box">
-            <h3>What we do for you</h3>
-            <ul>
-              <ListItems
-                image="images/infopin.png"
-                paragraph="Compile all the fly fishing guide info"
-              />
-              <ListItems
-                image="images/regionpin.png"
-                paragraph="Help understand the Carolinas"
-              />
-              <ListItems
-                image="images/journeypin.png"
-                paragraph="Curate the journey you want"
-              />
-            </ul>
-          </div>
+          <ListItemsIcon 
+            title="What we do for you"
+            image1="images/infopin.png"
+            paragraph1="Compile all the fly fishing guide info"
+            image2="images/regionpin.png"
+            paragraph2="Help understand the Carolinas"
+            image3="images/journeypin.png"
+            paragraph3="Curate the journey you want"
+          />
         </div>
 
-        <div className="page-buttons-stack">
-          <section className="f-container four-img-stack">
-            <PageButton
-              name="Fly Fishing Guide"
-              image="images/guide.jpg"
-            />
-            <PageButton
-              name="Fish and Fly Library"
-              image="images/library.jpg"
-            />
-            <PageButton
-              name="Fisherman's Spotlight"
-              image="images/spotlight.jpg"
-            />
-            <PageButton
-              name="About Me"
-              image="images/aboutme.jpg"
-            />
-          </section>
-        </div>
-            
+        <PageButton 
+          name1="Fly Fishing Guide"
+          image1="images/guide.jpg"
+          name2="Fish and Fly Library"
+          image2="images/library.jpg"
+          name3="Fisherman's Spotlight"
+          image3="images/spotlight.jpg"
+          name4="About Me"
+          image4="images/aboutme.jpg"
+        />
       </main>
     </>
   );

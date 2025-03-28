@@ -1,0 +1,28 @@
+.contact-box1 p,
+.contact-box2 p {
+  padding-left: 20px;
+}
+
+.contact-box1 section,
+.contact-box2 section {
+  padding:15px;
+  text-align: center;
+}
+
+.contact-box1 h3, 
+.contact-box2 h3 {
+  color: var(--primary-font-color);
+  padding-left: 20px;
+}
+
+.contact-unique h3 {
+    text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+    .contact-box1,
+  .contact-box2 {
+    flex: 1;
+    margin-top: 15px;
+  }
+}
