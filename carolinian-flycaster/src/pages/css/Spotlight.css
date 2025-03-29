@@ -1,3 +1,6 @@
 .page-buttons-stack {
     color: var(--primary-font-color);
 }
+.hide {
+    display: none;
+}
