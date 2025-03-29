@@ -36,16 +36,30 @@ function App() {
           />
         </div>
 
-        <PageButton 
-          name1="Fly Fishing Guide"
-          image1="images/guide.jpg"
-          name2="Fish and Fly Library"
-          image2="images/library.jpg"
-          name3="Fisherman's Spotlight"
-          image3="images/spotlight.jpg"
-          name4="About Me"
-          image4="images/aboutme.jpg"
-        />
+        <div className="page-buttons-stack">
+          <section className="f-container four-img-stack">
+            <PageButton
+              name="Fly Fishing Guide"
+              image="images/guide.jpg"
+              link="/Guide"
+            />
+            <PageButton
+              name="Fish and Fly Library"
+              image="images/library.jpg"
+              link="/Library"
+            />
+            <PageButton
+              name="Fisherman's Spotlight"
+              image="images/spotlight.jpg"
+              link="/Spotlight"
+            />
+            <PageButton
+              name="About Me"
+              image="images/aboutme.jpg"
+              link="/About"
+            />
+          </section>
+        </div>
       </main>
     </>
   );
