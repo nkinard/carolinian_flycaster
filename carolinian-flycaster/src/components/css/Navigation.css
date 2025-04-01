@@ -20,6 +20,36 @@
   color: var(--main-nav-fonthover-color);
 }
 
+#main-nav section {
+  width: 85%;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+#hamburger-toggle {
+  cursor:pointer;
+  border: 2px solid var(--borders-color);
+  margin-top: 6px;
+  margin-bottom: 6px;
+  width: 30px;
+  border-radius: 3px;
+  background-color: var(--paragraph-alternate-box-color);
+  display: block;
+  margin-left:auto;  
+}
+
+#hamburger-toggle div {
+  width:25px;
+  height: 2px;
+  background-color: var(--secondary-background-color);
+  margin: 6px 0;
+  margin-left: 2px;
+}
+
+.hide-small {
+  display: none;
+}
+
 @media (min-width: 768px) {
     #main-nav ul {
         display: flex;
@@ -31,4 +61,12 @@
       #main-nav li {
         border-bottom: hidden;
       }
+
+    #main-nav div {
+      display: none;
+    }
+
+    .hide-small {
+      display:flex
+    }
 }
