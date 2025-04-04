@@ -27,10 +27,23 @@
 
 @media (min-width: 768px) {
   #gallery-item {
-    width: calc(24% - 10px);
-    height: 275px;
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 275px;
     overflow: hidden;
     cursor: pointer;
+  }
+
+  #spotlights div {
+    min-width:300px;
+  }
+
+  #spotlights {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px;
   }
 
   #gallery-item img {

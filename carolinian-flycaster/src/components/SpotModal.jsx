@@ -1,15 +1,17 @@
 import "./css/SpotModal.css";
 
-function SpotModal(props) {
-  let modalClass = props.modalVisible ? "modal-style" : "modal-style hide";
+function SpotModal(props) { 
+  const isVisible = props.id === props.selectedModalId;
+
+  const getMap = `https://maps.google.com/maps?q=${props.latitude},${props.longitude}&output=embed`;
 
   return (
-        <div id={props.id} className={modalClass}>
+        <div className={`modal-style ${isVisible ? "" : "hide"}`}>
             <div className="modal-header">
                 <span className="x-button" onClick={props.closeModal}>&times;</span>
             </div>
             <div className="modal-box-content">
-                <img src={process.env.PUBLIC_URL + "/" + props.innerimage} alt="spotlight"/>
+                <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innerimage} alt={props.name}/>
                 <h2>{props.name} River Spotlight</h2>
                 <section><p>{props.summary}</p></section>
                 <section className="f-container">
@@ -23,11 +25,12 @@ function SpotModal(props) {
                         <p>Best Season(s): {props.seasons}</p>
                         <h3>Final Rating: {props.rating}/5</h3>
                     </div>
-                    <img src={process.env.PUBLIC_URL + "/" + props.iframe} alt="iframe box"/>
+                    <iframe src={getMap} title="Google Map"></iframe>
                 </section>
             </div>
         </div>
   );
+
 }
 
 export default SpotModal;

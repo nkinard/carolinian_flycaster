@@ -53,3 +53,11 @@
 .modal-style p {
   font-size: 20px;
 }
+
+.x-button {
+  font-size: x-large;
+  cursor: pointer;
+  max-width: fit-content;
+  align-self: flex-end; /* Push the button to the right within the flex container */
+  margin-left: auto; /* Alternative way to push to the right */
+}

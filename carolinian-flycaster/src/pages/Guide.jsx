@@ -3,7 +3,7 @@ import ParagraphBox from "../components/ParagraphBox";
 import AltParagraphBox from "../components/AltParagraphBox";
 import FourImageItem from "../components/FourImageItem";
 import ListItems from "../components/ListItems";
-
+import IframeVideo from "../components/IframeVideo";
 
 function Guide() {
   return (
@@ -51,6 +51,10 @@ function Guide() {
           image2="images/imageslide2.jpg"
           image3="images/imageslide3.jpg"
           image4="images/imageslide4.jpg" />
+
+        <IframeVideo
+          src="https://www.youtube.com/embed/Gk2ZusF6eJw?si=aCvilFzZpfRvmWUT"
+        />
 
         <ParagraphBox
           image="images/gear.jpg"

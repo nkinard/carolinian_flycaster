@@ -2,28 +2,22 @@ import "./css/FishModal.css";
 
 //react button help was from W3, stackform, and youtube
 function FishModal(props) {
-  let modalClass = props.modalVisible ? "modal-style" : "modal-style hide";
+  const isVisible = props.id === props.selectedModalIdfish;
 
   return (
     <>
-      <div id="modal-fish" className={modalClass}>
+      <div id="modal-fish" className={`modal-style ${isVisible ? "" : "hide"}`}>
         <div className="modal-header">
-          <span className="x-button" onClick={props.closeModal}>
+          <span className="x-button" onClick={props.closeModalfish}>
             &times;
           </span>
         </div>
         <div className="modal-box-content">
-          <img
-            src={process.env.PUBLIC_URL + "/" + props.innertopimage}
-            alt="fish"
-          />
+          <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innertopimage} alt={props.name}/>
           <h2>{props.name}</h2>
           <section className="f-container">
             <p>{props.summary}</p>
-            <img
-              src={process.env.PUBLIC_URL + "/" + props.innerbottomimage}
-              alt="fish"
-            />
+            <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innerbottomimage} alt={props.name}/>
           </section>
           <section className="f-container">
             <div>

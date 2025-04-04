@@ -102,37 +102,27 @@
 }
 
 @media (min-width: 768px) {
-  #galleryfly,
-  #gallery {
+  #gallery-item {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 275px;
+    overflow: hidden;
+    cursor: pointer;
+  }
+
+  #flies div {
+    min-width:300px;
+  }
+
+  #flies {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
+    flex-wrap: wrap; 
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px;
   }
 
-  #gallery-item,
-  #galleryfly-item {
-    width: calc(24% - 10px);
-    height: 275px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  #gallery-item img,
-  #galleryfly-item img {
-    height: 200px;
-  }
-
-  #gallery-item,
-  #galleryfly-item {
-    width: calc(24% - 10px);
-    height: 275px;
-    overflow: hidden;
-    cursor: pointer;
-  }
-
-  #gallery-item img,
-  #galleryfly-item img {
+  #gallery-item img {
     height: 200px;
   }
 }

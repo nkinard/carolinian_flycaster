@@ -50,24 +50,27 @@
 }
 
 @media (min-width: 768px) {
-  #galleryfish,
-  #gallery {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: space-between;
-  }
-
-  #gallery-item,
-  #galleryfish-item {
-    width: calc(24% - 10px);
-    height: 275px;
+  #gallery-item {
+    max-width: 100%;
+    min-width: 100%;
+    min-height: 275px;
     overflow: hidden;
     cursor: pointer;
   }
 
-  #gallery-item img,
-  #galleryfish-item img {
+  #fishes div {
+    min-width:300px;
+  }
+
+  #fishes {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%;
+    justify-content: space-around;
+    margin-bottom:10px;
+  }
+
+  #gallery-item img {
     height: 200px;
   }
 }

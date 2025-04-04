@@ -1,5 +1,6 @@
 import './css/About.css';
 import ContactBox from '../components/ContactBox';
+import ContactMe from '../components/ContactMe';
 
 function About() {
     return (
@@ -35,6 +36,8 @@ function About() {
         </div>
 
         <h2>Contact Me</h2>
+
+        <ContactMe />
 
         <div id="contact-icons" className="page-paragraph-box">
           <section className="f-container">

@@ -1,0 +1,11 @@
+/* Video */
+#video h2 {
+  text-align: center;
+}
+
+#video iframe {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  height: 500px;
+}

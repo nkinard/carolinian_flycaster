@@ -1,64 +1,22 @@
 import "./css/Spotlight.css";
-import Spot from "../components/Spot";
-import SpotModal from "../components/SpotModal";
+import Spots from "../components/Spots";
+import SpotModals from "../components/SpotModals";
+import SpotlightForm from "../components/SpotlightForm";
 import { useState } from "react";
+
 
 //react button help was from W3, stackform, and youtube
 function Spotlight() {
-  const [modalVisible, setModalVisible] = useState(false);
-  const [selectedSpot, setSelectedSpot] = useState(null);
 
-  const spotsData = [
-    {
-      id: "1",
-      name: "Chattooga",
-      summary:
-        "The Chattooga River is one of the southeast's longest rivers and cuts through Georgia, South Carolina, and North Carolina. This spectacular river is home to hundreds of different species of wildlife. The good thing about this river is that there is easy access at almost any point. There are times where the rapids pick up, but there are definitely spots for wading, kayaking, or bank casting. The best, and most popular, access to the river is off of State Highway 28.",
-      latitude: "34.9267293",
-      longitude: "-83.3724446",
-      fishes: "Rainbow and Brown Trout",
-      flies:
-        "Dry Flies: Yellow Sally, Elk Hair Caddis, Griffith's Gnat Nymph Flies: Zebra Midge, Golden Stonefly, Rainbow Warrior",
-      watertype: "Freshwater River",
-      typeofentry: "Public",
-      rating: "5",
-      innerimage: "images/flyfishchat.jpg",
-      seasons: "Best is Summer, Fall is acceptable",
-    },
-    {
-      id: "2",
-      name: "Chattooga2",
-      summary:
-        "The Chattooga River is one of the southeast's longest rivers and cuts through Georgia, South Carolina, and North Carolina. This spectacular river is home to hundreds of different species of wildlife. The good thing about this river is that there is easy access at almost any point. There are times where the rapids pick up, but there are definitely spots for wading, kayaking, or bank casting. The best, and most popular, access to the river is off of State Highway 28.",
-      latitude: "34.9267293",
-      longitude: "-83.3724446",
-      fishes: "Rainbow and Brown Trout",
-      flies:
-        "Dry Flies: Yellow Sally, Elk Hair Caddis, Griffith's Gnat Nymph Flies: Zebra Midge, Golden Stonefly, Rainbow Warrior",
-      watertype: "Freshwater River",
-      typeofentry: "Public",
-      rating: "5",
-      innerimage: "images/flyfishchat.jpg",
-      seasons: "Best is Summer, Fall is acceptable",
-    },
-  ];
+  const [selectedModalId, setSelectedModalId] = useState(null);
 
-  const openModal = (id) => {
-    let foundSpot = null;
-    for (let i = 0; i < spotsData.length; i++) {
-      if (spotsData[i].id === id) {
-        foundSpot = spotsData[i];
-        break;
-      }
-    }
-    setSelectedSpot(foundSpot);
-    setModalVisible(true);
-  };
+    const openModal = (id) => {
+        setSelectedModalId(id);
+    };
 
-  const closeModal = () => {
-    setModalVisible(false);
-    setSelectedSpot(null);
-  };
+    const closeModal = () => {
+        setSelectedModalId(null);
+    };
 
   return (
     <>
@@ -67,64 +25,14 @@ function Spotlight() {
         <div className="page-buttons-stack">
           <h2>Fisherman's Spotlight</h2>
         </div>
-        <div id="gallery" className="page-buttons-stack">
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
+        <Spots
+          onSpotClick={openModal} 
           />
-          <Spot
-            id="2"
-            name="Chattooga2"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("2")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-          <Spot
-            id="1"
-            name="Chattooga"
-            outerimage="images/chattooga.jpg"
-            onClick={() => openModal("1")}
-          />
-        </div>
 
-        {selectedSpot && (
-          <SpotModal
-            {...selectedSpot}
-            closeModal={closeModal}
-            modalVisible={modalVisible}
-          />
-        )}
+        <SpotModals 
+        selectedModalId={selectedModalId} closeModal={closeModal}
+        />   
+
 
         <div className="page-paragraph-content paragraph-color">
           <section className="f-container">
@@ -160,6 +68,8 @@ function Spotlight() {
               </p>
             </div>
           </section>
+
+          <SpotlightForm/>
         </div>
       </main>
     </>
