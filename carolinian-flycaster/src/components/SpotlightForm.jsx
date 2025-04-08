@@ -1,35 +1,30 @@
 import "./css/SpotlightForm.css";
 import React from "react";
 
-function SpotlightForm() {
-  const [result, setResult] = React.useState("");
+const SpotlightForm = () => {
+  const [result, setResult] = useState("");
+  const addToServer = async(event) => {
+    event.preventDefault(); //stops us from going to another page or refreshing
+    setResult("Sending...");
 
-  const onSubmit = async (event) => {
-    event.preventDefault();
-    setResult("Sending....");
     const formData = new FormData(event.target);
-
-    formData.append("access_key", "32c21653-ffe5-472d-9d74-bc05ecbffe6b");
-
-    const response = await fetch("https://api.web3forms.com/submit", {
-      method: "POST",
-      body: formData,
+    //console.log(...formData);
+    const response = await fetch("", {
+      "method":"POST",
+      "body":formData
     });
 
-    const data = await response.json();
-
-    if (data.success) {
-      setResult("Form Submitted Successfully");
+    if(response.status == 200){
+      setResult("Spotlight added successfully!")
       event.target.reset();
     } else {
-      console.log("Error", data);
-      setResult(data.message);
-    }
+      setResult("Error adding spotlight!");
+    };
   };
 
   return (
     <div id="submission-box" className="page-list-box submissions">
-    <form onSubmit={onSubmit} id="form">
+    <form onSubmit={addToServer} id="form">
       <h3>Submit new Spotlight:</h3>
       <div id="spotlight-form-container" className="f-container">
         <section>
