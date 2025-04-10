@@ -31,7 +31,11 @@ const SpotlightForm = () => {
           <ul>
             <li>
               Name of Location:{" "}
-              <input id="locationname" type="text" name="location" required />
+              <input id="locationname" type="text" name="name" required />
+            </li>
+            <li>
+              Summary of Location:{" "}
+              <input id="locationname" type="text" name="summary" required />
             </li>
             <li>
               Longitude of Location:{" "}
@@ -83,7 +87,7 @@ const SpotlightForm = () => {
                 id="riverimage"
                 type="file"
                 accept="image/*"
-                name="imageriver"
+                name="outerimage"
                 required
               />
             </li>
@@ -93,13 +97,13 @@ const SpotlightForm = () => {
                 id="holeimage"
                 type="file"
                 accept="image/*"
-                name="imagehole"
+                name="innerimage"
                 required
               />
             </li>
             <li>
               Best Season to Fish:{" "}
-              <input id="bestmonths" type="text" name="season" required />
+              <input id="bestmonths" type="text" name="seasons" required />
             </li>
             <li></li>
           </ul>
