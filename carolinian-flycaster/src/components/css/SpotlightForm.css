@@ -16,6 +16,7 @@
   
   #submission-box ul {
     padding-left: 0;
+    margin: 40px;
   }
 
   #spotlight-form-container {
@@ -36,4 +37,25 @@
   #btn-submit:hover {
     cursor: pointer;
     color: var(--primary-font-color);
+  }
+
+  #img-prev {
+    max-width: 300px;
+  }
+
+  #submission-box {
+    background-color: var(--paragraph-alternate-box-color);
+  }
+
+  #x-button {
+    font-size: x-large;
+    cursor: pointer;
+    max-width: fit-content;
+    display:block;
+    margin-left:auto;
+    margin-right:15px;
+  }
+
+  .error-message {
+    color:red;
   }

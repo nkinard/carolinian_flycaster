@@ -11,7 +11,7 @@ function SpotModal(props) {
                 <span className="x-button" onClick={props.closeModal}>&times;</span>
             </div>
             <div className="modal-box-content">
-                <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innerimage} alt={props.name}/>
+                <img src={"http://localhost:3001/images/"+props.innerimage} alt={props.name}/>
                 <h2>{props.name} River Spotlight</h2>
                 <section><p>{props.summary}</p></section>
                 <section className="f-container">

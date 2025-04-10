@@ -9,7 +9,7 @@ const SpotModals = ({ selectedModalId, closeModal }) => {
   useEffect(()=>{
     //automatically execute the async function
     (async () => {
-        const response = await axios.get("https://cf-server-1bsr.onrender.com/api/spotlights"); //add link to json here
+        const response = await axios.get("http://localhost:3001/api/spotlights"); //add link to json here
         setSpotlightModals(response.data);
     })();
   },[]);
@@ -19,7 +19,7 @@ const SpotModals = ({ selectedModalId, closeModal }) => {
     <div id="spotlightModals">
       {spotlightModals.map((props)=>(
         <SpotModal
-          key={props.id}
+          key={props.name+props.id}
           id={props.id}
           name={props.name}
           summary={props.summary}

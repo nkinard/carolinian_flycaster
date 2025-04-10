@@ -1,0 +1,11 @@
+#add-spotlight {
+    border-radius: 20px;
+    background-color: var(--paragraph-alternate-box-color);
+    color: var(--primary-font-color);
+    font-size:larger;
+    cursor:pointer;
+}
+
+.hide {
+    display: hidden;
+}
