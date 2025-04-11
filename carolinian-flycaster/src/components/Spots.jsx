@@ -18,7 +18,7 @@ const Spots = ({ onSpotClick, selectedModalId, closeModal }) => {
     (async () => {
       //http://localhost:3001/api/spotlights
       //https://cf-server-1bsr.onrender.com/api/spotlights
-      const response = await axios.get("http://localhost:3001/api/spotlights"); //add link to json here
+      const response = await axios.get("https://cf-server-1bsr.onrender.com/api/spotlights"); //add link to json here
       setSpotlights(response.data);
       setSpotlightModals(response.data);
     })();

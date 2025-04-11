@@ -9,7 +9,7 @@ const SpotModals = ({ selectedModalId, closeModal }) => {
   useEffect(()=>{
     //automatically execute the async function
     (async () => {
-        const response = await axios.get("http://localhost:3001/api/spotlights"); //add link to json here
+        const response = await axios.get("https://cf-server-1bsr.onrender.com/api/spotlights"); //add link to json here
         setSpotlightModals(response.data);
     })();
   },[]);

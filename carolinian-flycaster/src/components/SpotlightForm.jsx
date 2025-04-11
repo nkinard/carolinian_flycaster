@@ -68,7 +68,7 @@ const SpotlightForm = (props) => {
     const formData = new FormData(event.target);
     console.log(...formData);
 
-    const response = await fetch("http://localhost:3001/api/spotlights", {
+    const response = await fetch("https://cf-server-1bsr.onrender.com/api/spotlights", {
       "method":"POST",
       "body":formData
     });
