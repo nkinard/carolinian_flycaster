@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/carolinian_flycaster/static/css/main.a3acfc54.css",
-    "main.js": "/carolinian_flycaster/static/js/main.a749437b.js",
+    "main.css": "/carolinian_flycaster/static/css/main.b54f8d55.css",
+    "main.js": "/carolinian_flycaster/static/js/main.23479983.js",
     "index.html": "/carolinian_flycaster/index.html",
-    "main.a3acfc54.css.map": "/carolinian_flycaster/static/css/main.a3acfc54.css.map",
-    "main.a749437b.js.map": "/carolinian_flycaster/static/js/main.a749437b.js.map"
+    "main.b54f8d55.css.map": "/carolinian_flycaster/static/css/main.b54f8d55.css.map",
+    "main.23479983.js.map": "/carolinian_flycaster/static/js/main.23479983.js.map"
   },
   "entrypoints": [
-    "static/css/main.a3acfc54.css",
-    "static/js/main.a749437b.js"
+    "static/css/main.b54f8d55.css",
+    "static/js/main.23479983.js"
   ]
 }
