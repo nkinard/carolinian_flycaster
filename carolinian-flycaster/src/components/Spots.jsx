@@ -5,9 +5,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import SpotlightForm from "./SpotlightForm";
 
-const Spots = ({ onSpotClick, selectedModalId, closeModal }) => {
+const Spots = () => {
   const [spotlights, setSpotlights] = useState([]);
   const [spotlightModals, setSpotlightModals] = useState([]);
+
+  const [selectedModalId, setSelectedModalId] = useState(null);
 
   const [showAddDialog, setShowAddDialog] = useState(false);
   const [buttonClassName, setButtonClassName] = useState("");
@@ -23,6 +25,14 @@ const Spots = ({ onSpotClick, selectedModalId, closeModal }) => {
       setSpotlightModals(response.data);
     })();
   }, []);
+
+  const openModal = (id) => {
+    setSelectedModalId(id);
+  };
+
+  const closeModal = () => {
+    setSelectedModalId(null);
+  };  
 
   const openAddDialog = () => {
     setShowAddDialog(true);
@@ -40,67 +50,84 @@ const Spots = ({ onSpotClick, selectedModalId, closeModal }) => {
     setSpotlightModals((spotlightModals) => [...spotlightModals, spotlightPlan]);
   };
 
+  //code help from stackflow and W3 to make it auto
+  const updateExistingSpotlight = (updatedSpotlight) => {
+    setSpotlights((prevSpotlights) =>
+      prevSpotlights.map((spot) =>
+        spot.id === updatedSpotlight.id ? updatedSpotlight : spot
+      )
+    );
+    setSpotlightModals((prevSpotlightModals) =>
+      prevSpotlightModals.map((modal) =>
+        modal.id === updatedSpotlight.id ? updatedSpotlight : modal
+      )
+    );
+  };
+
   return (
     <>
-      <button
-        id="add-spotlight"
-        onClick={openAddDialog}
-        className={buttonClassName}
-      >
-        Add a Spotlight!
-      </button>
+      <div>
+        <button
+          id="add-spotlight"
+          onClick={openAddDialog}
+          className={buttonClassName}
+        >
+          Add a Spotlight!
+        </button>
 
-      {showAddDialog ? (
-        <SpotlightForm
-          closeAddDialog={closeAddDialog}
-          updateSpotlights={updateSpotlights}
-        />
-      ) : (
-        ""
-      )}
+        {showAddDialog ? (
+          <SpotlightForm
+            closeAddDialog={closeAddDialog}
+            updateSpotlights={updateSpotlights}
+          />
+        ) : (
+          ""
+        )}
 
-      <div id="spotlights" className="f-container">
-        {spotlights.map((props) => (
-          <div key={props.id} onClick={() => onSpotClick(props.id)}>
-            <Spot
-              id={props.id}
-              name={props.name}
-              summary={props.summary}
-              latitude={props.latitude}
-              longitude={props.longitude}
-              fishes={props.fishes}
-              flies={props.flies}
-              watertype={props.watertype}
-              typeofentry={props.typeofentry}
-              rating={props.rating}
-              innerimage={props.innerimage}
-              seasons={props.seasons}
-              outerimage={props.outerimage}
-            />
-          </div>
-        ))}
-
-        <div id="spotlightModals">
-          {spotlightModals.map((props) => (
-            <SpotModal
-              key={props.name + props.id}
-              id={props.id}
-              name={props.name}
-              summary={props.summary}
-              latitude={props.latitude}
-              longitude={props.longitude}
-              fishes={props.fishes}
-              flies={props.flies}
-              watertype={props.watertype}
-              typeofentry={props.typeofentry}
-              rating={props.rating}
-              innerimage={props.innerimage}
-              seasons={props.seasons}
-              outerimage={props.outerimage}
-              selectedModalId={selectedModalId}
-              closeModal={closeModal}
-            />
+        <div id="spotlights" className="f-container">
+          {spotlights.map((props) => (
+              <Spot
+                key={props.id}
+                id={props.id}
+                name={props.name}
+                summary={props.summary}
+                latitude={props.latitude}
+                longitude={props.longitude}
+                fishes={props.fishes}
+                flies={props.flies}
+                watertype={props.watertype}
+                typeofentry={props.typeofentry}
+                rating={props.rating}
+                innerimage={props.innerimage}
+                seasons={props.seasons}
+                outerimage={props.outerimage}
+                openModal={openModal}
+                onUpdateSpotlight={updateExistingSpotlight}
+              />
           ))}
+
+          <div id="spotlightModals">
+            {spotlightModals.map((props) => (
+              <SpotModal
+                key={props.name + props.id}
+                id={props.id}
+                name={props.name}
+                summary={props.summary}
+                latitude={props.latitude}
+                longitude={props.longitude}
+                fishes={props.fishes}
+                flies={props.flies}
+                watertype={props.watertype}
+                typeofentry={props.typeofentry}
+                rating={props.rating}
+                innerimage={props.innerimage}
+                seasons={props.seasons}
+                outerimage={props.outerimage}
+                selectedModalId={selectedModalId}
+                closeModal={closeModal}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </>

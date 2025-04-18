@@ -1,20 +1,8 @@
 import "./css/Spotlight.css";
 import Spots from "../components/Spots";
-import { useState } from "react";
-
 
 //react button help was from W3, stackform, and youtube
 function Spotlight() {
-  const [selectedModalId, setSelectedModalId] = useState(null);
-
-    const openModal = (id) => {
-        setSelectedModalId(id);
-    };
-
-    const closeModal = () => {
-        setSelectedModalId(null);
-    };
-
   return (
     <>
       <main id="main-content">
@@ -22,9 +10,7 @@ function Spotlight() {
         <div className="page-buttons-stack">
           <h2>Fisherman's Spotlight</h2>
         </div>
-        <Spots
-            onSpotClick={openModal} selectedModalId={selectedModalId} closeModal={closeModal}
-          />
+        <Spots/>
 
         <div className="page-paragraph-content paragraph-color">
           <section className="f-container">
