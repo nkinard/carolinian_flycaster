@@ -6,6 +6,21 @@ const EditSpotlight = (props) => {
   const [prevSrc, setPrevSrc] = useState("");
   const [prevSrc2, setPrevSrc2] = useState("");
 
+  const [editIMG, seteditIMG] = useState({});
+  const [editIMG2, seteditIMG2] = useState({});
+
+  const imageChange1 = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
+    seteditIMG((values) => ({...values, [name]: value}));
+  };
+
+  const imageChange2 = (event) => {
+    const name = event.target.name;
+    const value = event.target.files[0];
+    seteditIMG2((values) => ({...values, [name]: value}));
+  };
+
   const onSubmit = async (event) => {
     console.log("Editing spotlight with ID:", props.id);
     console.log(props.name);
@@ -175,20 +190,16 @@ const EditSpotlight = (props) => {
                           type="file"
                           accept="image/*"
                           name="outerimage"
-                          onChange={uploadImage}
-                          required
+                          onChange={imageChange1}
                         />
                         <div>
                           <p id="img-prev-section">
-                            {prevSrc !== "" ? (
-                              <img
-                                id="img-prev"
-                                src={prevSrc}
-                                alt="preview"
-                              ></img>
-                            ) : (
-                              ""
-                            )}
+                            <img
+                              id="img-prev"
+                              src={editIMG.img != null ? URL.createObjectURL(editIMG.img)
+                                : `https://cf-server-1bsr.onrender.com/images/${props.outerimage}`}
+                              alt=""                      
+                            />
                           </p>
                         </div>
                       </li>
@@ -199,20 +210,16 @@ const EditSpotlight = (props) => {
                           type="file"
                           accept="image/*"
                           name="innerimage"
-                          onChange={uploadImage2}
-                          required
+                          onChange={imageChange2}
                         />
                         <div>
-                          <p id="img-prev-section">
-                            {prevSrc2 !== "" ? (
-                              <img
-                                id="img-prev"
-                                src={prevSrc2}
-                                alt="preview"
-                              ></img>
-                            ) : (
-                              ""
-                            )}
+                        <p id="img-prev-section">
+                            <img
+                              id="img-prev"
+                              src={editIMG2.img != null ? URL.createObjectURL(editIMG2.img)
+                                : `https://cf-server-1bsr.onrender.com/images/${props.innerimage}`
+                              } alt=""                            
+                            />
                           </p>
                         </div>
                       </li>
