@@ -8,6 +8,7 @@ const EditSpotlight = (props) => {
 
   const onSubmit = async (event) => {
     console.log("Editing spotlight with ID:", props.id);
+    console.log(props.name);
     event.preventDefault();
     setResult("Sending...");
 
@@ -65,6 +66,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="name"
                           minLength="3"
+                          defaultValue={props.name}
                           required
                         />
                       </li>
@@ -75,6 +77,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="summary"
                           minLength="3"
+                          defaultValue={props.summary}
                           required
                         />
                       </li>
@@ -87,6 +90,7 @@ const EditSpotlight = (props) => {
                           min="-1000000000000"
                           max="1000000000000"
                           step="0.000000001"
+                          defaultValue={props.longitude}
                           required
                         />
                       </li>
@@ -99,6 +103,7 @@ const EditSpotlight = (props) => {
                           min="-1000000000000"
                           max="1000000000000"
                           step="0.000000001"
+                          defaultValue={props.latitude}
                           required
                         />
                       </li>
@@ -109,6 +114,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="fishes"
                           minLength="3"
+                          defaultValue={props.fishes}
                           required
                         />
                       </li>
@@ -119,6 +125,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="flies"
                           minLength="3"
+                          defaultValue={props.flies}
                           required
                         />
                       </li>
@@ -129,6 +136,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="watertype"
                           minLength="3"
+                          defaultValue={props.watertype}
                           required
                         />
                       </li>
@@ -143,6 +151,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="typeofentry"
                           minLength="3"
+                          defaultValue={props.typeofentry}
                           required
                         />
                       </li>
@@ -155,6 +164,7 @@ const EditSpotlight = (props) => {
                           min="1"
                           name="rating"
                           minLength="3"
+                          defaultValue={props.rating}
                           required
                         />
                       </li>
@@ -213,6 +223,7 @@ const EditSpotlight = (props) => {
                           type="text"
                           name="seasons"
                           minLength="3"
+                          defaultValue={props.seasons}
                           required
                         />
                       </li>
