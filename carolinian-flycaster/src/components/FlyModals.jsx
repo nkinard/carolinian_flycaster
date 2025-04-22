@@ -19,8 +19,8 @@ const FlyModals = ({ selectedModalIdfly, closeModalfly }) => {
     <div id="flyModals">
       {flyModals.map((props)=>(
         <FlyModal
-            key={props.id}
-            id={props.id}
+            key={props.name}
+            _id={props._id}
             name={props.name}
             summary={props.summary}
             outerimage={props.outerimage}

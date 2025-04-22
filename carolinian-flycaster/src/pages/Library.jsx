@@ -10,16 +10,16 @@ function Library() {
   const [selectedModalIdfly, setSelectedModalIdfly] = useState(null);
 
 
-    const openModalfish = (id) => {
-        setSelectedModalIdfish(id);
+    const openModalfish = (_id) => {
+        setSelectedModalIdfish(_id);
     };
 
     const closeModalfish = () => {
         setSelectedModalIdfish(null);
     };
 
-    const openModalfly = (id) => {
-      setSelectedModalIdfly(id);
+    const openModalfly = (_id) => {
+      setSelectedModalIdfly(_id);
   };
 
   const closeModalfly = () => {

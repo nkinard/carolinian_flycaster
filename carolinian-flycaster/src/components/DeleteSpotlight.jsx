@@ -7,8 +7,8 @@ const DeleteSpotlight = (props) => {
 
     const deleteSpot = async() => {
         //console.log(`https://cf-server-1bsr.onrender.com/api/spotlights/${props.id}`);
-        console.log("Deleting spotlight with ID:", props.id);
-        const response = await fetch(`https://cf-server-1bsr.onrender.com/api/spotlights/${props.id}`,{
+        console.log("Deleting spotlight with ID:", props._id);
+        const response = await fetch(`https://cf-server-1bsr.onrender.com/api/spotlights/${props._id}`,{
             method:"DELETE"
           });
 

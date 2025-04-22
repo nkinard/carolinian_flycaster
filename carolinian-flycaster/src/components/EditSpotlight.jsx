@@ -22,7 +22,7 @@ const EditSpotlight = (props) => {
   };
 
   const onSubmit = async (event) => {
-    console.log("Editing spotlight with ID:", props.id);
+    console.log("Editing spotlight with ID:", props._id);
     console.log(props.name);
     event.preventDefault();
     setResult("Sending...");
@@ -32,7 +32,7 @@ const EditSpotlight = (props) => {
 
     //http://localhost:3001/api/houses/${props._id}
     const response = await fetch(
-      `https://cf-server-1bsr.onrender.com/api/spotlights/${props.id}`,
+      `https://cf-server-1bsr.onrender.com/api/spotlights/${props._id}`,
       {
         method: "PUT",
         body: formData,

@@ -26,8 +26,8 @@ const Spots = () => {
     })();
   }, []);
 
-  const openModal = (id) => {
-    setSelectedModalId(id);
+  const openModal = (_id) => {
+    setSelectedModalId(_id);
   };
 
   const closeModal = () => {
@@ -54,12 +54,12 @@ const Spots = () => {
   const updateExistingSpotlight = (updatedSpotlight) => {
     setSpotlights((prevSpotlights) =>
       prevSpotlights.map((spot) =>
-        spot.id === updatedSpotlight.id ? updatedSpotlight : spot
+        spot._id === updatedSpotlight._id ? updatedSpotlight : spot
       )
     );
     setSpotlightModals((prevSpotlightModals) =>
       prevSpotlightModals.map((modal) =>
-        modal.id === updatedSpotlight.id ? updatedSpotlight : modal
+        modal._id === updatedSpotlight._id ? updatedSpotlight : modal
       )
     );
   };
@@ -87,8 +87,8 @@ const Spots = () => {
         <div id="spotlights" className="f-container">
           {spotlights.map((props) => (
               <Spot
-                key={props.id}
-                id={props.id}
+                key={props.name}
+                _id={props._id}
                 name={props.name}
                 summary={props.summary}
                 latitude={props.latitude}
@@ -109,8 +109,8 @@ const Spots = () => {
           <div id="spotlightModals">
             {spotlightModals.map((props) => (
               <SpotModal
-                key={props.name + props.id}
-                id={props.id}
+                key={props.name}
+                _id={props._id}
                 name={props.name}
                 summary={props.summary}
                 latitude={props.latitude}

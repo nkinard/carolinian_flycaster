@@ -2,7 +2,7 @@ import "./css/FlyModal.css";
 
 //react button help was from W3, stackform, and youtube
 function FlyModal(props) {
-  const isVisible = props.id === props.selectedModalIdfly;
+  const isVisible = props._id === props.selectedModalIdfly;
 
   return (
     <>

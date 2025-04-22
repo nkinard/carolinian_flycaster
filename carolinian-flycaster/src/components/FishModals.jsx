@@ -9,6 +9,8 @@ const FishModals = ({ selectedModalIdfish, closeModalfish }) => {
   useEffect(()=>{
     //automatically execute the async function
     (async () => {
+        //http://localhost:3001/api/spotlights
+        //https://cf-server-1bsr.onrender.com/api/fishes
         const response = await axios.get("https://cf-server-1bsr.onrender.com/api/fishes"); //add link to json here
         setFishModals(response.data);
     })();
@@ -19,8 +21,8 @@ const FishModals = ({ selectedModalIdfish, closeModalfish }) => {
     <div id="fishModals">
       {fishModals.map((props)=>(
         <FishModal
-            key={props.id}
-            id={props.id}
+            key={props.name}
+            _id={props._id}
             name={props.name}
             summary={props.summary}
             outerimage={props.outerimage}

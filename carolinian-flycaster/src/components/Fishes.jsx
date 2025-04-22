@@ -20,9 +20,9 @@ const Fishes = ({onSpotClickfish}) => {
     <>
       <div id="fishes" className="f-container">
         {fishes.map((props)=>(
-          <div key={props.id} onClick={() => onSpotClickfish(props.id)}>
+          <div key={props.name} onClick={() => onSpotClickfish(props._id)}>
             <Fish
-              id={props.id}
+              _id={props._id}
               name={props.name}
               summary={props.summary}
               outerimage={props.outerimage}

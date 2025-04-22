@@ -1,7 +1,7 @@
 import "./css/SpotModal.css";
 
 function SpotModal(props) { 
-  const isVisible = props.id === props.selectedModalId;
+  const isVisible = props._id === props.selectedModalId;
 
   const getMap = `https://maps.google.com/maps?q=${props.latitude},${props.longitude}&output=embed`;
 

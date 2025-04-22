@@ -19,8 +19,8 @@ const SpotModals = ({ selectedModalId, closeModal }) => {
     <div id="spotlightModals">
       {spotlightModals.map((props)=>(
         <SpotModal
-          key={props.name+props.id}
-          id={props.id}
+          key={props.name}
+          _id={props._id}
           name={props.name}
           summary={props.summary}
           latitude={props.latitude}

@@ -42,7 +42,7 @@ function Spot(props) {
           {showDeleteDialog?(
             <DeleteSpotlight
             name={spotlight.name}
-            id={spotlight.id}
+            _id={spotlight._id}
             closeDeleteDialog={closeDeleteDialog}
             hideSpotlight={hideSpotlight}
             />
@@ -50,7 +50,7 @@ function Spot(props) {
 
           {showEditDialog?(
                <EditSpotlight
-               id={spotlight.id}
+               _id={spotlight._id}
                name={spotlight.name}
                summary={spotlight.summary}
                latitude={spotlight.latitude}
@@ -69,7 +69,7 @@ function Spot(props) {
             ):("")}
 
           <section id="gallery-spot-item">
-              <section className="spot-box" onClick={() => props.openModal(props.id)}>
+              <section className="spot-box" onClick={() => props.openModal(props._id)}>
                   <img src={"https://cf-server-1bsr.onrender.com/images/"+props.outerimage} alt={props.name}/>
                   <h3>{props.name}</h3>
               </section> 

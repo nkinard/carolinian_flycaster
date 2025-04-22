@@ -20,9 +20,9 @@ const Flies = ({onSpotClickfly}) => {
     <>
       <div id="flies" className="f-container">
         {flies.map((props)=>(
-          <div key={props.id} onClick={() => onSpotClickfly(props.id)}>
+          <div key={props.name} onClick={() => onSpotClickfly(props._id)}>
             <Fly
-              id={props.id}
+              _id={props._id}
               name={props.name}
               summary={props.summary}
               outerimage={props.outerimage}

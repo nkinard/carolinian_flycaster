@@ -2,7 +2,7 @@ import "./css/FishModal.css";
 
 //react button help was from W3, stackform, and youtube
 function FishModal(props) {
-  const isVisible = props.id === props.selectedModalIdfish;
+  const isVisible = props._id === props.selectedModalIdfish;
 
   return (
     <>
