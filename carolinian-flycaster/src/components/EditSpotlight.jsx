@@ -9,16 +9,31 @@ const EditSpotlight = (props) => {
   const [editIMG, seteditIMG] = useState({});
   const [editIMG2, seteditIMG2] = useState({});
 
+  //code help from W3 and some stackflow for the image changes
   const imageChange1 = (event) => {
     const name = event.target.name;
     const value = event.target.files[0];
-    seteditIMG((values) => ({...values, [name]: value}));
+    console.log(value);
+    seteditIMG((values) => ({ ...values, [name]: value }));
+    console.log(editIMG);
+    // Directly update the preview source in editIMG state
+    if (value) {
+      seteditIMG((prevValues) => ({ ...prevValues, previewUrl: URL.createObjectURL(value) }));
+    } else {
+      seteditIMG((prevValues) => ({ ...prevValues, previewUrl: null }));
+    }
   };
 
   const imageChange2 = (event) => {
     const name = event.target.name;
     const value = event.target.files[0];
-    seteditIMG2((values) => ({...values, [name]: value}));
+    seteditIMG2((values) => ({ ...values, [name]: value }));
+    // Directly update the preview source in editIMG2 state
+    if (value) {
+      seteditIMG2((prevValues) => ({ ...prevValues, previewUrl: URL.createObjectURL(value) }));
+    } else {
+      seteditIMG2((prevValues) => ({ ...prevValues, previewUrl: null }));
+    }
   };
 
   const onSubmit = async (event) => {
@@ -196,7 +211,7 @@ const EditSpotlight = (props) => {
                           <p id="img-prev-section">
                             <img
                               id="img-prev"
-                              src={editIMG.img != null ? URL.createObjectURL(editIMG.img)
+                              src={editIMG.previewUrl ? editIMG.previewUrl
                                 : `https://cf-server-1bsr.onrender.com/images/${props.outerimage}`}
                               alt=""                      
                             />
@@ -216,7 +231,7 @@ const EditSpotlight = (props) => {
                         <p id="img-prev-section">
                             <img
                               id="img-prev"
-                              src={editIMG2.img != null ? URL.createObjectURL(editIMG2.img)
+                              src={editIMG2.previewUrl ? editIMG2.previewUrl
                                 : `https://cf-server-1bsr.onrender.com/images/${props.innerimage}`
                               } alt=""                            
                             />

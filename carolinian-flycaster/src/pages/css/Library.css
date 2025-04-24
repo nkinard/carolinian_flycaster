@@ -1,6 +1,11 @@
 .page-paragraph-content {
   padding-top: 10px;
   padding-bottom: 10px;
+  margin-top:5px;
+}
+
+.guidepage-ending {
+  margin-top:5px;
 }
 
 .page-paragraph-content h2 {

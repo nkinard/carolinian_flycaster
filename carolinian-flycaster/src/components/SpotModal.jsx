@@ -12,7 +12,9 @@ function SpotModal(props) {
             </div>
             <div className="modal-box-content">
                 <section>
-                    <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innerimage} alt={props.name}/>
+                    <div className="inner-image-box">
+                        <img src={"https://cf-server-1bsr.onrender.com/images/"+props.innerimage} alt={props.name}/>
+                    </div>
                 </section>
                 <h2>{props.name} River Spotlight</h2>
                 <section><p>{props.summary}</p></section>
